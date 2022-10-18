@@ -69,6 +69,11 @@ const ingredients = {
       antall: 1 / 12,
     },
     {
+      entallsform: "pakke ost",
+      flertallsform: "pakker ost",
+      antall: 1 / 10,
+    },
+    {
       entallsform: "pakke sprøstekt løk",
       flertallsform: "pakker sprøstekt løk",
       antall: 1 / 25,
