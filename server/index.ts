@@ -5,10 +5,18 @@ const io = new Server({
   cors: { origin: "*" },
 });
 
+const roomData = {};
+
 io.on("connection", (socket) => {
   console.log(`socket ${socket.id} connected`);
 
-  socket.emit("hello", "world");
+  socket.on(
+    "createRoom",
+    (count, checked, callback: (name: string) => void) => {
+      const roomName = Math.random().toString(36).substring(2, 7);
+      callback(roomName);
+    }
+  );
 
   socket.on("disconnect", (reason) => {
     console.log(`socket ${socket.id} disconnected due to ${reason}`);
