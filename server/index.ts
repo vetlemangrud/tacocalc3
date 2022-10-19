@@ -13,10 +13,28 @@ io.on("connection", (socket) => {
   socket.on(
     "createRoom",
     (count, checked, callback: (name: string) => void) => {
-      const roomName = Math.random().toString(36).substring(2, 7);
+      let roomName;
+      do {
+        roomName = Math.random().toString(36).substring(2, 7).toUpperCase();
+      } while (roomData[roomName]);
       callback(roomName);
+      roomData[roomName] = { count, checked };
+      console.log(roomData);
     }
   );
+
+  socket.on("joinRoom", (roomName, callback: (data: any) => void) => {
+    if (roomData[roomName]) {
+      callback(roomData[roomName]);
+    } else {
+      callback(null);
+    }
+  });
+
+  socket.on("changeCheckedState", (key, value, room) => {
+    roomData[room].checked[key] = value;
+    socket.to(room).emit("changeCheckedState", key, value);
+  });
 
   socket.on("disconnect", (reason) => {
     console.log(`socket ${socket.id} disconnected due to ${reason}`);
