@@ -37,6 +37,11 @@ io.on("connection", (socket) => {
     socket.in(room).emit("changeCheckedState", key, value);
   });
 
+  socket.on("changePersonCount", (value, room) => {
+    roomData[room].count = value;
+    socket.in(room).emit("changePersonCount", value);
+  });
+
   socket.on("disconnect", (reason) => {
     console.log(`socket ${socket.id} disconnected due to ${reason}`);
   });

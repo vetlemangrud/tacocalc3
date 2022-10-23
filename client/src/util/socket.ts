@@ -13,22 +13,28 @@ roomStore.subscribe((value) => {
 });
 
 personCount.subscribe((value) => {
+  if (value !== count && currentRoom) {
+    socket.emit("changePersonCount", value, currentRoom);
+  }
   count = value;
-  socket.emit("changePersonCount", count);
 });
 
 checkedState.subscribe((value) => {
   for (const key in checked) {
-    if (checked[key] != value[key]) {
+    if (checked[key] != value[key] && currentRoom) {
       socket.emit("changeCheckedState", key, value[key], currentRoom);
     }
   }
   checked = { ...value };
 });
 
-socket.on("changeCheckedState", (key, value) => {
-  console.log("changeCheckedState", key, value);
+socket.on("changePersonCount", (value) => {
+  console.log("changePersonCount", value);
+  count = value;
+  personCount.set(value);
+});
 
+socket.on("changeCheckedState", (key, value) => {
   checkedState.update((checked) => {
     checked[key] = value;
     return checked;
