@@ -2,7 +2,7 @@ import { io } from "socket.io-client";
 import { roomStore } from "../stores/roomStore";
 import { checkedState, personCount } from "../stores/inputStatesStore";
 
-const socket = io("http://localhost:3000");
+const socket = io(import.meta.env.VITE_SERVER_URL || "http://localhost:3000");
 
 let count = 0;
 let checked = {};
