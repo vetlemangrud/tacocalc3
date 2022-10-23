@@ -2,6 +2,8 @@
 
 En revolusjon innen tacokalkulering
 
+Live demo: [tacocalc3.vercel.app](https://tacocalc3.vercel.app)
+
 ## 📦 Installasjon
 Du må ha [Deno](https://deno.land/) og [Yarn](https://yarnpkg.com/getting-started/install) installert. (Jada, beklager at du må ha Deno _og_ node. Ville ha Deno til tjeneren, men ville ikke messe med Deno-Vite-Svelte-klientside).
 
