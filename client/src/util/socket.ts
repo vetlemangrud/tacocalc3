@@ -26,7 +26,9 @@ checkedState.subscribe((value) => {
   checked = { ...value };
 });
 
-socket.on("changeCheckedValue", (key, value) => {
+socket.on("changeCheckedState", (key, value) => {
+  console.log("changeCheckedState", key, value);
+
   checkedState.update((checked) => {
     checked[key] = value;
     return checked;
