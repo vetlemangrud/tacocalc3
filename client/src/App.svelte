@@ -14,7 +14,7 @@
   $: smallHeader = y > 100;
 </script>
 
-<header>
+<header class:smallHeader>
   <Modal show={$modal}>
     <img
       src={$roomStore ? spinningTaco : tacoStill}
@@ -22,7 +22,11 @@
       on:click={showModal}
     />
   </Modal>
-  <p>{$roomStore ? "" : "Trykk på tacoen for å bli med i singulatiteten"}</p>
+  <p>
+    {$roomStore || smallHeader
+      ? ""
+      : "Trykk på tacoen for å bli med i singulatiteten"}
+  </p>
   <h1>Tacokalkulator 3</h1>
 </header>
 <main>

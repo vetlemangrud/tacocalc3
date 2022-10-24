@@ -5,6 +5,7 @@
 </script>
 
 <div>
+  <h2>Tacolink</h2>
   {#if $roomStore === ""}
     <button on:click={() => createRoom()}>Create room</button>
     <input type="text" bind:value={roomToJoin} />
