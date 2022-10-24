@@ -35,13 +35,13 @@ header {
 .smallHeader {
   flex-direction: row;
   justify-content: center;
-  height: 100px;
+  height: 70px;
   font-size: small;
 }
 
 .smallHeader img {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
 
 main {
