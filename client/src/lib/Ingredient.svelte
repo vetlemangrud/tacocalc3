@@ -10,7 +10,7 @@
       type="checkbox"
       bind:checked={$checkedState[ingredient.entallsform]}
     />
-    {Math.floor(antall)}
+    {Math.floor(antall) || 0}
     {antall === 1 ? ingredient.entallsform : ingredient.flertallsform}
   </p>
 </div>
