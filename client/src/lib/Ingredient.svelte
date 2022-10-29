@@ -10,8 +10,6 @@
   <span
     on:click={() =>
       checkedState.update((state) => {
-        console.log(state);
-
         state[ingredient.entallsform] = !state[ingredient.entallsform];
         return state;
       })}
