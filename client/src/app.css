@@ -1,6 +1,7 @@
 :root {
-  --main-color: #602f28;
-  --alt-color: #ffd700;
+  --main-color:#294936  ;
+  --magic-color:#521945;
+  --alt-color:#FAFFFD;
 }
 
 
@@ -12,21 +13,19 @@ body {
 
 #app {
   width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--main-color);
-    color: var(--alt-color);
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main-color);
+  color: var(--alt-color);
 }
 
 header {
-    background-color: var(--alt-color);
-    color: var(--main-color);
     width: 100%;
     display: flex;
     align-items: center;
@@ -36,6 +35,8 @@ header {
     height: 400px;
     transition: height 0.1s;
     z-index: 1;
+    background-color: var(--alt-color);
+    color: var(--main-color);
 }
 
 .smallHeader {
