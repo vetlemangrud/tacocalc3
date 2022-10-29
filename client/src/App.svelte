@@ -32,7 +32,7 @@
 <main>
   <div>
     <h2>Hvor mange skal spise?</h2>
-    <input type="text" bind:value={$personCount} />
+    <input type="number" bind:value={$personCount} />
   </div>
   <IngredientList />
 </main>
