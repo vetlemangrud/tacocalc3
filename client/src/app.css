@@ -9,6 +9,7 @@ body {
     margin: 0;
 }
 
+
 #app {
   width: 100%;
     display: flex;
@@ -16,7 +17,11 @@ body {
     align-items: center;
     background-color: var(--main-color);
     color: var(--alt-color);
-    font-family: sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -30,6 +35,7 @@ header {
     top: 0;
     height: 400px;
     transition: height 0.1s;
+    z-index: 1;
 }
 
 .smallHeader {
@@ -46,4 +52,8 @@ header {
 
 main {
   margin-top: 400px;
+}
+
+input {
+  width: auto;
 }
