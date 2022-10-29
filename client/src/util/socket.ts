@@ -57,6 +57,11 @@ export const joinRoom = (roomName: string) => {
   });
 };
 
+export const leaveRoom = () => {
+  socket.emit("leaveRoom", currentRoom);
+  roomStore.set("");
+};
+
 socket.on("disconnect", () => {
   roomStore.set("");
 });

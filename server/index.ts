@@ -7,6 +7,12 @@ const io = new Server({
 
 const roomData = {};
 
+io.of("/").adapter.on("delete-room", (room, id) => {
+  if (roomData[room]) {
+    delete roomData[room];
+  }
+});
+
 io.on("connection", (socket) => {
   console.log(`socket ${socket.id} connected`);
 
@@ -30,6 +36,10 @@ io.on("connection", (socket) => {
     } else {
       callback(null);
     }
+  });
+
+  socket.on("leaveRoom", (roomName) => {
+    socket.leave(roomName);
   });
 
   socket.on("changeCheckedState", (key, value, room) => {
