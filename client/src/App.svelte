@@ -25,7 +25,7 @@
   <p>
     {$roomStore || smallHeader
       ? ""
-      : "Trykk på tacoen for å bli med i singulatiteten"}
+      : "Trykk på tacoen for å bli med i singulariteten"}
   </p>
   <h1>Tacokalkulator 3</h1>
 </header>
