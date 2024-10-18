@@ -64,11 +64,6 @@ const ingredients = {
       antall: 1 / 10,
     },
     {
-      entallsform: "glass fetaost",
-      flertallsform: "glass fetaost",
-      antall: 1 / 12,
-    },
-    {
       entallsform: "pakke revet ost",
       flertallsform: "pakker revet ost",
       antall: 1 / 10,
