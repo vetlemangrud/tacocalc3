@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
+  import type { Ingredient } from "src/ingredients";
   import { personCount, checkedState } from "../stores/inputStatesStore";
-  export let ingredient;
-  $: antall = Math.ceil(ingredient.antall * $personCount);
+  export let ingredient: Ingredient;
+  $: antall =
+    Math.ceil(ingredient.antall * $personCount) * (ingredient.enhet ?? 1);
 </script>
 
 <div>

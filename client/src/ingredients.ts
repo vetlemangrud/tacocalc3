@@ -1,7 +1,17 @@
+export type Ingredient = {
+  entallsform: string;
+  flertallsform: string;
+  antall: number;
+  enhet?: number;
+};
 const ingredients = {
   main: [
     //Grønnsakshylla
-    { entallsform: "rødløk", flertallsform: "rødløk", antall: 1 / 12 },
+    {
+      entallsform: "rødløk",
+      flertallsform: "rødløk",
+      antall: 1 / 12,
+    },
     { entallsform: "paprika", flertallsform: "paprikaer", antall: 1 / 12 },
     {
       entallsform: "isbergsalathode",
@@ -46,15 +56,16 @@ const ingredients = {
       antall: 1 / 4,
     },
     {
-      entallsform: "pakke bacon",
-      flertallsform: "pakker bacon",
-      antall: 1 / 7,
+      entallsform: "gram bacon",
+      flertallsform: "gram bacon",
+      antall: 1 / 8,
+      enhet: 400,
     },
 
     //Og så videre
     {
-      entallsform: "boks bønner",
-      flertallsform: "bokser bønner",
+      entallsform: "boks kidneybønner",
+      flertallsform: "bokser kidneybønner",
       antall: (150 / 400) * (2 / 3),
     },
     { entallsform: "gram mais", flertallsform: "gram mais", antall: 25 },
@@ -64,7 +75,13 @@ const ingredients = {
       antall: 1 / 10,
     },
     {
-      entallsform: "pakke revet ost",
+      entallsform: "gram hummus",
+      flertallsform: "gram hummus",
+      antall: 1 / 25,
+      enhet: 250,
+    },
+    {
+      entallsform: "pakker revet ost",
       flertallsform: "pakker revet ost",
       antall: 1 / 10,
     },
